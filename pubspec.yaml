@@ -5,7 +5,7 @@ author: Gacnt <https://github.com/Gacnt>
 homepage: https://github.com/Gacnt/Dart-PUBGAPI
 
 environment:
-  sdk: '>=1.20.1 <=2.0.0-dev.52.0'
+  sdk: '>=1.20.1 <=2.0.0-dev.48.0' 
 
 dependencies:
   http: ^0.11.3+16
