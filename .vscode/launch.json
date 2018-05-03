@@ -1,0 +1,11 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Analysis server tests",
+			"program": "${file}",
+			"request": "launch",
+			"type": "dart"
+		}
+	]
+}
