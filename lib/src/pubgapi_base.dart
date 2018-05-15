@@ -108,7 +108,8 @@ class PUBGAPI {
         print(res.toString());
       }
       return new APlayer.fromJson(res);
-    } catch (e) {
+    } catch (e, x) {
+      print(x);
       return new Future.error(e);
     }
   }
