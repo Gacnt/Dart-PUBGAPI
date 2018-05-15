@@ -1,6 +1,6 @@
 name: pubgapi
 description: A Playerunknown's Battleground API wrapper for Dart!
-version: 0.0.5
+version: 0.0.6
 author: Gacnt <https://github.com/Gacnt>
 homepage: https://github.com/Gacnt/Dart-PUBGAPI
 
