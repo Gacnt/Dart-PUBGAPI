@@ -65,12 +65,20 @@ class PUBGAPI {
 
     var res = await http
       .get(Uri.encodeFull("$API_URL/$API_SHARD/$requestURI"), headers: _headers);
+      if (this.debugMode) {
+        print(res);
+        print(res.statusCode);
+      }
 
     if (res.statusCode == 404) {
       return new Future.error(new ResponseError(Errors.NotFound, ""));
     }
     if (res.statusCode == 429) {
       return new Future.error(new ResponseError(Errors.RateLimitExceeded, ""));
+    }
+
+    if (this.debugMode) {
+      print(res.body);
     }
 
     var resBody = JSON.decode(res.body);
