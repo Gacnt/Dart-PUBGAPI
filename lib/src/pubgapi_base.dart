@@ -75,12 +75,16 @@ class PUBGAPI {
 
     var resBody = JSON.decode(res.body);
 
-    if (this.debugMode)
+    print("Test");
+
+    if (this.debugMode) {
       print(resBody);
+    }
 
     if ((resBody as Map).containsKey("errors")) {
-      if (this.debugMode)
+      if (this.debugMode) {
         print(resBody);
+      }
       var err = resBody["errors"];
       return new Future.error(new ResponseError(Errors.Custom, err.toString()));
     }
