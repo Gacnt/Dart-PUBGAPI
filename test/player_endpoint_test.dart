@@ -7,7 +7,7 @@ void main() {
 
     setUp(() async {
       String API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkMWE4ZWQ4MC0zMDQ0LTAxMzYtMDgxMi0wYTU4NjQ3NTk1MDIiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTI1MjcyMDg3LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6InBhbmljIiwic2NvcGUiOiJjb21tdW5pdHkiLCJsaW1pdCI6NTB9.Tq75T0wn5hYOt09iFT10s4MzEZgMfQlQPidt_m_R-pI";
-      api = new PUBGAPI(API_KEY: API_KEY);
+      api = new PUBGAPI(API_KEY: API_KEY, debugMode: true);
     });
 
     test('Find player and look them up', () async {
