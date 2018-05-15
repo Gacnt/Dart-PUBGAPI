@@ -104,9 +104,6 @@ class PUBGAPI {
     final String _request = "players?filter[playerNames]=$name";
     try {
       var res = await _sendRequest(_request);
-      if (this.debugMode) {
-        print(res.toString());
-      }
       return new APlayer.fromJson(res);
     } catch (e, x) {
       print(x);
