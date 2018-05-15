@@ -32,9 +32,8 @@ class PUBGAPI {
   String API_KEY;
   String API_URL = "https://api.playbattlegrounds.com/shards";
   String API_SHARD = "pc-na";
-  bool debugMode = false;
 
-  PUBGAPI({this.API_KEY, this.debugMode});
+  PUBGAPI({this.API_KEY});
 
   Future<dynamic> _sendRequestRaw(String requestURI) async {
     final Map<String,String> _headers = {
@@ -65,10 +64,6 @@ class PUBGAPI {
 
     var res = await http
       .get(Uri.encodeFull("$API_URL/$API_SHARD/$requestURI"), headers: _headers);
-      if (this.debugMode) {
-        print(res);
-        print(res.statusCode);
-      }
 
     if (res.statusCode == 404) {
       return new Future.error(new ResponseError(Errors.NotFound, ""));
@@ -77,22 +72,12 @@ class PUBGAPI {
       return new Future.error(new ResponseError(Errors.RateLimitExceeded, ""));
     }
 
-    if (this.debugMode) {
-      print(res.body);
-    }
-
     var resBody = JSON.decode(res.body);
 
     print("Test");
 
-    if (this.debugMode) {
-      print(resBody);
-    }
-
     if ((resBody as Map).containsKey("errors")) {
-      if (this.debugMode) {
-        print(resBody);
-      }
+
       var err = resBody["errors"];
       return new Future.error(new ResponseError(Errors.Custom, err.toString()));
     }
