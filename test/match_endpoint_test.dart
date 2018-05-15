@@ -7,7 +7,7 @@ void main() {
 
     setUp(() async {
       String API_KEY = "";
-      api = new PUBGAPI(API_KEY);
+      api = new PUBGAPI(API_KEY: API_KEY);
     });
 
     test('Find Match By Id', () async {

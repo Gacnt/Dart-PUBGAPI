@@ -32,8 +32,9 @@ class PUBGAPI {
   String API_KEY;
   String API_URL = "https://api.playbattlegrounds.com/shards";
   String API_SHARD = "pc-na";
+  bool debugMode = false;
 
-  PUBGAPI(this.API_KEY);
+  PUBGAPI({this.API_KEY, this.debugMode});
 
   Future<dynamic> _sendRequestRaw(String requestURI) async {
     final Map _headers = {
@@ -74,7 +75,12 @@ class PUBGAPI {
 
     var resBody = JSON.decode(res.body);
 
+    if (this.debugMode)
+      print(resBody);
+
     if ((resBody as Map).containsKey("errors")) {
+      if (this.debugMode)
+        print(resBody);
       var err = resBody["errors"];
       return new Future.error(new ResponseError(Errors.Custom, err.toString()));
     }

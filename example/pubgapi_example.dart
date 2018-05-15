@@ -1,7 +1,7 @@
 import 'package:pubgapi/pubgapi.dart';
 
 main() {
-  var api = PUBGAPI("123131afsafsa");
+  var api = PUBGAPI(API_KEY: "ASDASDAD");
   
     api.getPlayerByName("PanicIsReal")
     .then((player) {
