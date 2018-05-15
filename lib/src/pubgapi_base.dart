@@ -37,7 +37,7 @@ class PUBGAPI {
   PUBGAPI({this.API_KEY, this.debugMode});
 
   Future<dynamic> _sendRequestRaw(String requestURI) async {
-    final Map _headers = {
+    final Map<String,String> _headers = {
       "Accept": "application/vnd.api+json"
     };
 
@@ -58,7 +58,7 @@ class PUBGAPI {
 
 
   Future<dynamic> _sendRequest(String requestURI) async {
-    final Map _headers = {
+    final Map<String, String> _headers = {
       "Accept": "application/vnd.api+json",
       "Authorization": "Bearer $API_KEY"
     };
