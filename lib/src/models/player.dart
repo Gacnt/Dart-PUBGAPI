@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'player.g.dart';
 
 @JsonSerializable()
-class APlayer {
+class APlayer extends Object with _$APlayerSerializerMixin {
   List<APlayerData> data;
 
   APlayer(this.data);
@@ -12,7 +12,7 @@ class APlayer {
 }
 
 @JsonSerializable()
-class APlayerData {
+class APlayerData extends Object with _$APlayerDataSerializerMixin {
   String id;
   String type;
   APlayerAttributes attributes;
@@ -25,7 +25,7 @@ class APlayerData {
 }
 
 @JsonSerializable()
-class APlayerAttributes {
+class APlayerAttributes extends Object with _$APlayerAttributesSerializerMixin {
   String name;
   String titleId;
   String shardId;
@@ -39,7 +39,7 @@ class APlayerAttributes {
 }
 
 @JsonSerializable()
-class APlayerRelationships {
+class APlayerRelationships extends Object with _$APlayerRelationshipsSerializerMixin {
   APlayerMatches matches;
 
   APlayerRelationships(this.matches);
@@ -48,7 +48,7 @@ class APlayerRelationships {
 }
 
 @JsonSerializable()
-class APlayerMatches {
+class APlayerMatches extends Object with _$APlayerMatchesSerializerMixin {
   List<APlayerRelationshipAsset> data;
 
   APlayerMatches(this.data);
@@ -57,7 +57,7 @@ class APlayerMatches {
 }
 
 @JsonSerializable()
-class APlayerRelationshipAsset {
+class APlayerRelationshipAsset extends Object with _$APlayerRelationshipAssetSerializerMixin {
   String type;
   String id;
 
@@ -67,7 +67,7 @@ class APlayerRelationshipAsset {
 }
 
 @JsonSerializable()
-class APlayerLinks {
+class APlayerLinks extends Object with _$APlayerLinksSerializerMixin {
   String selflink;
   String schema;
 
