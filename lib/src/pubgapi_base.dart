@@ -74,8 +74,6 @@ class PUBGAPI {
 
     var resBody = JSON.decode(res.body);
 
-    print("Test");
-
     if ((resBody as Map).containsKey("errors")) {
 
       var err = resBody["errors"];
